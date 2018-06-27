@@ -119,8 +119,8 @@ table, th, td {
   <li><div class="popup" onclick="myFunction()">CSC 401: Introduction to Programming
   <span class="popuptext" id="myPopup">An introduction to programming with a focus on problem solving, structured programming, and algorithm design with a gentle introduction to efficiency. Concepts covered include data types, expressions, variables, assignments, conditional and iterative structures, functions, file input/output, exceptions, namespaces, and recursion.</span>
 </div> </li>
-  <li><div class="popup" onclick="myFunction()">DSC 423: Data Analysis and Regression
-  <span class="popuptext" id="myPopup">Multiple regression and correlation, residual analysis, analysis of variance, and robustness.</span>
+  <li><div class="popup" onclick="myFunction2()">DSC 423: Data Analysis and Regression
+  <span class="popuptext" id="myPopup2">Multiple regression and correlation, residual analysis, analysis of variance, and robustness.</span>
 </div></li>
 </ul>
     
@@ -128,6 +128,14 @@ table, th, td {
 // When the user clicks on div, open the popup
 function myFunction() {
     var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+}
+</script>
+
+<script>
+// When the user clicks on div, open the popup
+function myFunction2() {
+    var popup = document.getElementById("myPopup2");
     popup.classList.toggle("show");
 }
 </script>
