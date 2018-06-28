@@ -16,9 +16,9 @@ header, footer {
 }
 nav {
     float: left;
-    max-width: 160px;
+    max-width: 400px;
     margin: 0;
-    padding: 1em;
+    padding: 20px;
 }
 nav ul {
     list-style-type: none;
@@ -29,9 +29,10 @@ nav ul a {
     text-decoration: none;
 }
 article {
-    margin-left: 350px;
-    padding: 1em;
-    overflow: hidden;
+    margin-left: 150px;
+    float: left;
+    padding: 20px;
+    width: 40%;
 }
 table, th, td {
     border: 1px solid black;
@@ -47,6 +48,7 @@ table, th, td {
     -ms-user-select: none;
     user-select: none;
 }
+
 /* The actual popup */
 .popup .popuptext {
     visibility: hidden;
@@ -62,6 +64,7 @@ table, th, td {
     left: 50%;
     margin-left: -80px;
 }
+
 /* Popup arrow */
 .popup .popuptext::after {
     content: "";
@@ -73,17 +76,20 @@ table, th, td {
     border-style: solid;
     border-color: #555 transparent transparent transparent;
 }
+
 /* Toggle this class - hide and show the popup */
 .popup .show {
     visibility: visible;
     -webkit-animation: fadeIn 1s;
     animation: fadeIn 1s;
 }
+
 /* Add animation (fade in the popup) */
 @-webkit-keyframes fadeIn {
     from {opacity: 0;} 
     to {opacity: 1;}
 }
+
 @keyframes fadeIn {
     from {opacity: 0;}
     to {opacity:1 ;}
@@ -92,9 +98,9 @@ table, th, td {
     width: 250px;
 }
     
-td{background:red;border:1px solid #000}
+td{background:#C0B283;border:1px solid #000}
 td a{display:block;position:relative}
-td a:hover{background:blue;color:#fff}
+td a:hover{background:#DCD0C0;color:#fff}
     
 </style>
 </head>
@@ -107,15 +113,19 @@ td a:hover{background:blue;color:#fff}
         <h3>Data Analyst at Claro Healthcare<br>M.S. in Data Science Candidate - DePaul University</h3>
 </header>
   
-<table align = "center" class = "myTable" style="background-color:#c04000;">
+<table align = "center" class = "myTable" style="background-color:#C0B283;">
   <tr>
     <td align = "center"><a href="index.html">Home</a></td> 
     <td align = "center"><a href="projects.html">Projects</a></td> 
     <td align = "center"><a href="courses.html">Courses</a></td> 
   </tr>
 </table>
- 
-  <h2>Courses (click to view description)</h2>
+  <nav>
+    <h2>MS in Data Science Program</h2>
+    <p>The MS in Data Science (formerly the MS in Predictive Analytics) teaches students advanced technical and analytical skills to meet the challenge of big data analytics. The degree prepares the next generation of leaders in data science who can analyze massive amounts of data and extract information from complex data sources. The curriculum emphasizes technical proficiency and practical experience, and provides students with advanced skills in data mining, statistics, machine learning, and big data processing.
+    </nav>
+ <article>
+  <h2>Graduate coursework completed (click to view description)</h2>
   <p><div class="popup" onclick="myFunction()">CSC 401: Introduction to Programming
   <span class="popuptext" id="myPopup">An introduction to programming with a focus on problem solving, structured programming, and algorithm design with a gentle introduction to efficiency. Concepts covered include data types, expressions, variables, assignments, conditional and iterative structures, functions, file input/output, exceptions, namespaces, and recursion.</span>
 </div> 
@@ -128,7 +138,7 @@ td a:hover{background:blue;color:#fff}
  <p><div class="popup" onclick="myFunction4()">DSC 465: Data Visualization
   <span class="popuptext" id="myPopup4">An introduction to data visualization techniques to enhance the exploration and analysis of large data sets from a wide range of fields including commercial, financial, medical, scientific and engineering applications. Topics include visual encoding of numeric data, graphical integrity and effective visualization design, visualizing distributions and correlation, false-color techniques for feature extraction and enhancement, basic network visualization and graph layout, isosurface generation, geospatial visualization and volumetric rendering techniques. The course explores both existing visualization software packages and code interfaces for data visualization.</span>
 </div>
-
+</article>
     
 <script>
 // When the user clicks on div, open the popup
