@@ -93,10 +93,13 @@ table, th, td {
     from {opacity: 0;}
     to {opacity:1 ;}
 }
-    
 .myTable th {
     width: 250px;
 }
+    
+td{background:red;border:1px solid #000}
+td a{display:block;position:relative}
+td a:hover{background:blue;color:#fff}
     
 </style>
 </head>
@@ -111,26 +114,22 @@ table, th, td {
   
 <table align = "center" class = "myTable" style="background-color:#c04000;">
   <tr>
-    <th> <a href = "index.html">Home<a/></th>
-    <th> <a href = "projects.html">Projects<a/></th>
-    <th> <a href = "courses.html">Courses<a/></th>
-
+    <td align = "center"><a href="index.html">Home</a></td> 
+    <td align = "center"><a href="projects.html">Projects</a></td> 
+    <td align = "center"><a href="courses.html">Courses</a></td> 
   </tr>
 </table>
  
   <h2>Courses</h2>
-  <p><div class="popup" onclick="myFunction()">CSC 401: Introduction to Programming
+<ul style="list-style-type:none">
+  <li><div class="popup" onclick="myFunction()">CSC 401: Introduction to Programming
   <span class="popuptext" id="myPopup">An introduction to programming with a focus on problem solving, structured programming, and algorithm design with a gentle introduction to efficiency. Concepts covered include data types, expressions, variables, assignments, conditional and iterative structures, functions, file input/output, exceptions, namespaces, and recursion.</span>
-</div> 
-  <p><div class="popup" onclick="myFunction2()">DSC 423: Data Analysis and Regression
+</div> </li>
+  <li> </li>
+  <li><div class="popup" onclick="myFunction2()">DSC 423: Data Analysis and Regression
   <span class="popuptext" id="myPopup2">Multiple regression and correlation, residual analysis, analysis of variance, and robustness.</span>
-</div>
-  <p><div class="popup" onclick="myFunction3()">DSC 450: Database Processing for Large-Scale Analytics 
-  <span class="popuptext" id="myPopup3">The course covers core concepts of database systems with focus on applications in large-scale analytics. Topics include relational databases, scheme normalization, SQL queries for data integration and data cleaning, database programming for ETL, and nontraditional database systems for unstructured data.</span>
-</div>
-  <p><div class="popup" onclick="myFunction4()">DSC 465: Data Visualization 
-  <span class="popuptext" id="myPopup4">An introduction to data visualization techniques to enhance the exploration and analysis of large data sets from a wide range of fields including commercial, financial, medical, scientific and engineering applications. Topics include visual encoding of numeric data, graphical integrity and effective visualization design, visualizing distributions and correlation, false-color techniques for feature extraction and enhancement, basic network visualization and graph layout, isosurface generation, geospatial visualization and volumetric rendering techniques. The course explores both existing visualization software packages and code interfaces for data visualization.</span>
-</div>
+</div></li>
+</ul>
     
 <script>
 // When the user clicks on div, open the popup
@@ -147,27 +146,9 @@ function myFunction2() {
     popup.classList.toggle("show");
 }
 </script>
-
-<script>
-// When the user clicks on div, open the popup
-function myFunction3() {
-    var popup = document.getElementById("myPopup3");
-    popup.classList.toggle("show");
-}
-</script>
-    
-<script>
-// When the user clicks on div, open the popup
-function myFunction4() {
-    var popup = document.getElementById("myPopup4");
-    popup.classList.toggle("show");
-}
-</script>
     
 </div>
 
 </body>
 </html>
-
-
 
