@@ -128,7 +128,7 @@ td a:hover{background:#DCD0C0;color:#fff}
 
   <!-- Modal content -->
   <div class="modal-content">
-    <span class="close">&times;</span>
+    <span id = "span1" class="close">&times;</span>
     <p>An introduction to programming with a focus on problem solving, structured programming, and algorithm design with a gentle introduction to efficiency. Concepts covered include data types, expressions, variables, assignments, conditional and iterative structures, functions, file input/output, exceptions, namespaces, and recursion.</p>
   </div>
 
@@ -141,7 +141,7 @@ td a:hover{background:#DCD0C0;color:#fff}
 
   <!-- Modal content -->
   <div class="modal-content">
-    <span class="close">&times;</span>
+    <span id = "span2" class="close">&times;</span>
     <p>Multiple regression and correlation, residual analysis, analysis of variance, and robustness.</p>
   </div>
 
@@ -160,7 +160,7 @@ var modal = document.getElementById('myModal');
 var btn = document.getElementById("myBtn");
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+var span = document.getElementById("span1");
 
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
@@ -188,7 +188,7 @@ var modal = document.getElementById('myModal2');
 var btn = document.getElementById("myBtn2");
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+var span = document.getElementById("span2");
 
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
