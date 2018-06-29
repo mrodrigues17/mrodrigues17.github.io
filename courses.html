@@ -89,14 +89,7 @@ table, th, td {
 .myTable td {
     width: 250px;
 }
-    
-    
-    
-    
-    
-    
-    
-    
+   
 td{background:#C0B283;border:1px solid #000}
 td a{display:block;position:relative}
 td a:hover{background:#DCD0C0;color:#fff}
@@ -140,6 +133,20 @@ td a:hover{background:#DCD0C0;color:#fff}
   </div>
 
 </div>
+
+<button id="myBtn2">DSC 423: Data Analysis and Regression</button>
+
+<!-- The Modal -->
+<div id="myModal2" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Multiple regression and correlation, residual analysis, analysis of variance, and robustness.</p>
+  </div>
+
+</div>    
+
    <h2>About DePaul's MS in Data Science Program</h2>
     <p>The MS in Data Science (formerly the MS in Predictive Analytics) teaches students advanced technical and analytical skills to meet the challenge of big data analytics. The degree prepares the next generation of leaders in data science who can analyze massive amounts of data and extract information from complex data sources. The curriculum emphasizes technical proficiency and practical experience, and provides students with advanced skills in data mining, statistics, machine learning, and big data processing.
     
@@ -151,6 +158,34 @@ var modal = document.getElementById('myModal');
 
 // Get the button that opens the modal
 var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal2');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn2");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
