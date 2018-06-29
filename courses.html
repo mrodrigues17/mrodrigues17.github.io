@@ -123,7 +123,6 @@ td a:hover{background:#DCD0C0;color:#fff}
     <h2>Graduate coursework completed (click to view description)</h2>
   <button id="myBtn">CSC 401: Introduction to Programming</button>
 
-<!-- The Modal -->
 <div id="myModal" class="modal">
 
   <!-- Modal content -->
@@ -136,7 +135,6 @@ td a:hover{background:#DCD0C0;color:#fff}
 
 <button id="myBtn2">DSC 423: Data Analysis and Regression</button>
 
-<!-- The Modal -->
 <div id="myModal2" class="modal">
 
   <!-- Modal content -->
@@ -146,6 +144,30 @@ td a:hover{background:#DCD0C0;color:#fff}
   </div>
 
 </div>    
+ 
+<button id="myBtn3">DSC 450: Database Processing for Large-Scale Analytics</button>
+
+<div id="myModal3" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span id = "span3" class="close">&times;</span>
+    <p>The course covers core concepts of database systems with focus on applications in large-scale analytics. Topics include relational databases, scheme normalization, SQL queries for data integration and data cleaning, database programming for ETL, and nontraditional database systems for unstructured data.</p>
+  </div>
+
+</div>    
+
+<button id="myBtn4">DSC 465: Data Visualization</button>
+
+<div id="myModal4" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span id = "span4" class="close">&times;</span>
+    <p>An introduction to data visualization techniques to enhance the exploration and analysis of large data sets from a wide range of fields including commercial, financial, medical, scientific and engineering applications. Topics include visual encoding of numeric data, graphical integrity and effective visualization design, visualizing distributions and correlation, false-color techniques for feature extraction and enhancement, basic network visualization and graph layout, isosurface generation, geospatial visualization and volumetric rendering techniques. The course explores both existing visualization software packages and code interfaces for data visualization.</p>
+  </div>
+
+</div> 
 
    <h2>About DePaul's MS in Data Science Program</h2>
     <p>The MS in Data Science (formerly the MS in Predictive Analytics) teaches students advanced technical and analytical skills to meet the challenge of big data analytics. The degree prepares the next generation of leaders in data science who can analyze massive amounts of data and extract information from complex data sources. The curriculum emphasizes technical proficiency and practical experience, and provides students with advanced skills in data mining, statistics, machine learning, and big data processing.
@@ -189,6 +211,62 @@ var btn = document.getElementById("myBtn2");
 
 // Get the <span> element that closes the modal
 var span = document.getElementById("span2");
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+    
+<script>
+// Get the modal
+var modal = document.getElementById('myModal3');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn3");
+
+// Get the <span> element that closes the modal
+var span = document.getElementById("span3");
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+    
+<script>
+// Get the modal
+var modal = document.getElementById('myModal4');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn4");
+
+// Get the <span> element that closes the modal
+var span = document.getElementById("span4");
 
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
