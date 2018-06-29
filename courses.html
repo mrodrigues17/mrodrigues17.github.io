@@ -4,7 +4,7 @@
 <link rel="stylesheet" type="text/css" href="mystyle.css"></head>  
 <style>
 div.container {
-    width: 100%;
+    min-width: 1000px;
 }
 header, footer {
     padding: 1em;
@@ -16,22 +16,29 @@ header, footer {
 }
 nav {
     float: left;
-    max-width: 400px;
+    max-width: 500px;
     margin: 0;
     padding: 20px;
+    margin-left: 30%;
 }
 nav ul {
     list-style-type: none;
     padding: 0;
 }
-   
+    
 nav ul a {
     text-decoration: none;
 }
-article {
-    margin-left: 150px;
+nav.myPhoto {
     float: left;
+    max-width: 160px;
+    margin: 0;
     padding: 20px;
+}
+article {
+    margin-left: 350px;
+    padding: 1em;
+    overflow: hidden;
     width: 40%;
 }
 table, th, td {
@@ -48,23 +55,24 @@ table, th, td {
     -ms-user-select: none;
     user-select: none;
 }
-
 /* The actual popup */
 .popup .popuptext {
     visibility: hidden;
-    width: 300px;
+    width: 400px;
     background-color: #555;
     color: #fff;
-    text-align: center;
+    text-align: left;
     border-radius: 6px;
-    padding: 8px 0;
     position: absolute;
     z-index: 1;
     bottom: 125%;
     left: 50%;
-    margin-left: -80px;
+    margin-left: -100px;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
 }
-
 /* Popup arrow */
 .popup .popuptext::after {
     content: "";
@@ -76,20 +84,17 @@ table, th, td {
     border-style: solid;
     border-color: #555 transparent transparent transparent;
 }
-
 /* Toggle this class - hide and show the popup */
 .popup .show {
     visibility: visible;
     -webkit-animation: fadeIn 1s;
     animation: fadeIn 1s;
 }
-
 /* Add animation (fade in the popup) */
 @-webkit-keyframes fadeIn {
     from {opacity: 0;} 
     to {opacity: 1;}
 }
-
 @keyframes fadeIn {
     from {opacity: 0;}
     to {opacity:1 ;}
@@ -117,16 +122,19 @@ td a:hover{background:#DCD0C0;color:#fff}
   <tr>
     <td align = "center"><a href="index.html">Home</a></td> 
     <td align = "center"><a href="projects.html">Projects</a></td> 
-    <td align = "center"><a href="courses.html">Courses</a></td> 
+    <td align = "center"><a href="courses.html">Coursework</a></td> 
   </tr>
 </table>
-  <nav>
-    <h2>MS in Data Science Program</h2>
-    <p>The MS in Data Science (formerly the MS in Predictive Analytics) teaches students advanced technical and analytical skills to meet the challenge of big data analytics. The degree prepares the next generation of leaders in data science who can analyze massive amounts of data and extract information from complex data sources. The curriculum emphasizes technical proficiency and practical experience, and provides students with advanced skills in data mining, statistics, machine learning, and big data processing.
-    </nav>
- <article>
-  <h2>Graduate coursework completed (click to view description)</h2>
-  <p><div class="popup" onclick="myFunction()">CSC 401: Introduction to Programming
+    
+    
+<nav class = "myPhoto">
+  <img src="depaul.png" alt="DePaul University CDM" width="300" height="300">
+</nav>
+    
+    
+<article>
+    <h2>Graduate coursework completed (click to view description)</h2>
+  <p align = "center"><div class="popup" onclick="myFunction()">CSC 401: Introduction to Programming
   <span class="popuptext" id="myPopup">An introduction to programming with a focus on problem solving, structured programming, and algorithm design with a gentle introduction to efficiency. Concepts covered include data types, expressions, variables, assignments, conditional and iterative structures, functions, file input/output, exceptions, namespaces, and recursion.</span>
 </div> 
   <p><div class="popup" onclick="myFunction2()">DSC 423: Data Analysis and Regression
@@ -137,8 +145,12 @@ td a:hover{background:#DCD0C0;color:#fff}
 </div>
  <p><div class="popup" onclick="myFunction4()">DSC 465: Data Visualization
   <span class="popuptext" id="myPopup4">An introduction to data visualization techniques to enhance the exploration and analysis of large data sets from a wide range of fields including commercial, financial, medical, scientific and engineering applications. Topics include visual encoding of numeric data, graphical integrity and effective visualization design, visualizing distributions and correlation, false-color techniques for feature extraction and enhancement, basic network visualization and graph layout, isosurface generation, geospatial visualization and volumetric rendering techniques. The course explores both existing visualization software packages and code interfaces for data visualization.</span>
-</div>
-</article>
+</div>    
+  <h2>About DePaul's MS in Data Science Program</h2>
+    <p>The MS in Data Science (formerly the MS in Predictive Analytics) teaches students advanced technical and analytical skills to meet the challenge of big data analytics. The degree prepares the next generation of leaders in data science who can analyze massive amounts of data and extract information from complex data sources. The curriculum emphasizes technical proficiency and practical experience, and provides students with advanced skills in data mining, statistics, machine learning, and big data processing.
+   
+      
+    </article>
     
 <script>
 // When the user clicks on div, open the popup
@@ -157,25 +169,4 @@ function myFunction2() {
 </script>
     
 <script>
-// When the user clicks on div, open the popup
-function myFunction3() {
-    var popup = document.getElementById("myPopup3");
-    popup.classList.toggle("show");
-}
-</script>
-
-<script>
-// When the user clicks on div, open the popup
-function myFunction4() {
-    var popup = document.getElementById("myPopup4");
-    popup.classList.toggle("show");
-}
-</script>
-    
-</div>
-
-</body>
-</html>
-
-
 
