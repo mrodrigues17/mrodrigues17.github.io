@@ -90,7 +90,7 @@ td a:hover{background:#DCD0C0;color:#fff}
     
 </style>
 </head>
-<body class="test1 test2 test3 test4">>
+<body id = "mods">
 
 <div class="container">
 
@@ -199,11 +199,9 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 // When the user clicks anywhere outside of the modal, close it
-test1.onclick = function(event) {
+document.addEventListener("click", function(){
     if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
+        modal.style.display = "none"}});
 </script>
 
 <script>
@@ -224,11 +222,9 @@ span2.onclick = function() {
     modal2.style.display = "none";
 }
 // When the user clicks anywhere outside of the modal, close it
-test2.onclick = function(event) {
+document.addEventListener("click", function(){
     if (event.target == modal2) {
-        modal2.style.display = "none";
-    }
-}
+        modal2.style.display = "none"}});
 </script>
     
 <script>
@@ -249,11 +245,9 @@ span3.onclick = function() {
     modal3.style.display = "none";
 }
 // When the user clicks anywhere outside of the modal, close it
-test3.onclick = function(event) {
+document.addEventListener("click", function(){
     if (event.target == modal3) {
-        modal3.style.display = "none";
-    }
-}
+        modal3.style.display = "none"}});
 </script>
     
 <script>
@@ -274,11 +268,9 @@ span4.onclick = function() {
     modal4.style.display = "none";
 }
 // When the user clicks anywhere outside of the modal, close it
-test4.onclick = function(event) {
+document.addEventListener("click", function(){
     if (event.target == modal4) {
-        modal4.style.display = "none";
-    }
-}
+        modal4.style.display = "none"}});
 </script>
     
 </div>
