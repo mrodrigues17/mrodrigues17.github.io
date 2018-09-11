@@ -14,6 +14,18 @@ header, footer {
     text-align: center;
     background-size: auto;
 }
+    
+.column {
+    float: left;
+    width:50%;
+    padding: 10px;
+}
+ 
+.row:after {
+    content: "";
+    display: table;
+    clear:both;
+    }
 nav {
     float: left;
     max-width: 500px;
@@ -81,7 +93,8 @@ td a:hover{background:#DCD0C0;color:#fff;border-radius: 25px;height: 25px}
   </tr>
 </table>
     </header>
-<article>
+<div class="row">
+   <div class="column">
 <h1><u>Projects</u></h1>
   <p>6/21/2018<br><a class = "projects" href="https://maxrodrigues17.shinyapps.io/nba-players-stats/" target="_blank">NBA Statistics Visualization App</a>
       <br>This is a Shiny app that allows users to compare every NBA player to each other on a variety of common basketball statistics.
@@ -91,8 +104,15 @@ td a:hover{background:#DCD0C0;color:#fff;border-radius: 25px;height: 25px}
       <br>This app allows users to view regional trends in police killings over the last four years.
   <p>10/31/2017<br><a class = "projects" href="final_project.html"> Coursera Practical Machine Learning Project</a>
       <br>This was the final project for Coursera's practical machine learning course.
-</article>
-    
+    </div>    
+<div class="column">
+    <h1><u>Publications/Conference Presentations</u></h1>
+  <p>Johnson, Samuel and Rodrigues, Max and Tuckett, David, Cultural Values Guide Consumers’ Deference to Experts (July 14, 2018). Available at SSRN: https://ssrn.com/abstract=3214001 or http://dx.doi.org/10.2139/ssrn.3214001
+  <p>Rodrigues, M.A., Johnson, S. (2017).  The Persuasiveness of Shared Values on Financial Advice Taking.  Poster presented at the 2017 intern poster session.  New Haven, CT.
+  <p>Tomkins, B., Pytel, L., Rodrigues, M.A., Virtue, S., Perea, M., & Gomez, P. (2017).  Decisional, perceptual and lexical factors in the divided visual field lexical decision task.  A diffusion model account.  Poster presented at the 2017 International Symposium of Psycholinguistics.  Braga, Portugal.
+  <p>Tomkins, B., Pytel, L., Rodrigues, M.A., Virtue, S., Perea, M., & Gomez, P. (2017).  The Effects of Task Difficulty on Decisional Biases in a Divided Visual Field Lexical Decision Task.  Poster presented at the 22nd Annual DePaul Psych Night.  Chicago, Illinois.
+  </div>
+</div>
 
 
 </div>
