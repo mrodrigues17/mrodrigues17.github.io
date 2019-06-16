@@ -225,10 +225,25 @@ td a:hover{background:#DCD0C0;color:#fff;border-radius: 25px;height: 25px}
 
 </div>    
     </li>
+<li>
+<button id="myBtn6" class = "button">DSC 430: Python Programming</button>
+
+<div id="myModal6" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span id = "span6" class="close">&times;</span>
+    <h3>DSC 430: Python Programming</h3>
+    <p>This course builds the skills necessary to use Python to develop larger programs and libraries. Students will learn to design, implement and debug Python functions and programs, including stochastic and object-oriented techniques. The course will cover Python data structures, and Python facilities for working with files, strings, regular expressions, databases and URLs. The course will also include an introduction to the Pandas package for data management, the NumPy package for scientific computing, and the Matplotlib package for visualization. </p>
+    <p>A link to assignments completed for the course <a class = "courses" href="https://github.com/mrodrigues17/python_programming_depaul" target="_blank">here.</a>
+    </div>
+    
+
+</div>    
+    </li>
     </ul>
    <h2>About DePaul's MS in Data Science Program</h2>
     <p>The MS in Data Science (formerly the MS in Predictive Analytics) teaches students advanced technical and analytical skills to meet the challenge of big data analytics. The degree prepares the next generation of leaders in data science who can analyze massive amounts of data and extract information from complex data sources. The curriculum emphasizes technical proficiency and practical experience, and provides students with advanced skills in data mining, statistics, machine learning, and big data processing.
-    
     </article>
     
 <script>
@@ -345,6 +360,31 @@ document.addEventListener("click", function(){
     if (event.target == modal5) {
         modal5.style.display = "none"}});
 </script>
+<script>
+// Get the modal
+var modal6 = document.getElementById('myModal6');
+// Get the button that opens the modal
+var btn6 = document.getElementById("myBtn6");
+// Get the <span> element that closes the modal
+var span6 = document.getElementById("span6");
+var test6 = document.getElementsByClassName("test6")
+
+// When the user clicks the button, open the modal 
+btn6.onclick = function() {
+    modal6.style.display = "block";
+}
+// When the user clicks on <span> (x), close the modal
+span6.onclick = function() {
+    modal6.style.display = "none";
+}
+// When the user clicks anywhere outside of the modal, close it
+document.addEventListener("click", function(){
+    if (event.target == modal6) {
+        modal6.style.display = "none"}});
+</script>
+    
+    
+    
 </div>
 
 </body>
