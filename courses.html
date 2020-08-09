@@ -211,6 +211,7 @@ td a:hover{background:#DCD0C0;color:#fff;border-radius: 25px;height: 25px}
 
 </div> 
     </li>
+    
 <li>
 <button id="myBtn5" class = "button">DSC 441: Fundamentals of Data Science</button>
 
@@ -254,6 +255,21 @@ td a:hover{background:#DCD0C0;color:#fff;border-radius: 25px;height: 25px}
     </div>
 </div>    
     </li>
+
+<li>
+<button id="myBtn8" class = "button">CSC 555: Mining Big Data</button>
+
+<div id="myModal8" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span id = "span8" class="close">&times;</span>
+    <h3>CSC 555: Mining Big Data</h3>
+    <p>Introduction to fundamentals of distributed file systems and map-reduce technology (e.g., Hadoop); tuning map-reduce performance in a distributed network. Algorithms and tools for mining massive data sets and discussion of current challenges. Applications in clustering, similarity search, classification, data warehousing (e.g., Hive), machine learning (e.g., Mahout). </p>
+    </div>
+</div>    
+    </li>
+    
     
     </ul>
    <h2>About DePaul's MS in Data Science Program</h2>
@@ -420,6 +436,29 @@ document.addEventListener("click", function(){
         modal7.style.display = "none"}});
 </script>
     
+    
+<script>
+// Get the modal
+var modal8 = document.getElementById('myModal8');
+// Get the button that opens the modal
+var btn8 = document.getElementById("myBtn8");
+// Get the <span> element that closes the modal
+var span8 = document.getElementById("span8");
+var test8 = document.getElementsByClassName("test8")
+
+// When the user clicks the button, open the modal 
+btn8.onclick = function() {
+    modal8.style.display = "block";
+}
+// When the user clicks on <span> (x), close the modal
+span8.onclick = function() {
+    modal8.style.display = "none";
+}
+// When the user clicks anywhere outside of the modal, close it
+document.addEventListener("click", function(){
+    if (event.target == modal8) {
+        modal8.style.display = "none"}});
+</script>
     
 </div>
 
