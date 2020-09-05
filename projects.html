@@ -3,7 +3,9 @@
 <head>
 <link rel="stylesheet" type="text/css" href="mystyle.css"></head>  
 <style>
-
+* {
+  box-sizing: border-box;
+}
 
 
 div.container {
@@ -23,6 +25,7 @@ header, footer {
     width:50%;
     padding: 10px;
 }
+
  
 .row:after {
     content: "";
@@ -31,7 +34,7 @@ header, footer {
     }
 nav {
     float: left;
-    max-width: 1000px;
+    max-width: 500px;
     margin: 0;
     padding: 20px;
     margin-left: 30%;
@@ -48,7 +51,7 @@ article {
     margin-left: 50px;
     padding: 1em;
     overflow: hidden;
-    max-width: 1000px;
+    max-width: 500px;
 }
 th, td {
     border: 1px solid black;
@@ -98,6 +101,7 @@ td a:hover{background:#DCD0C0;color:#fff;border-radius: 25px;height: 25px}
     </header>
 <div class="row">
    <div class="column">
+<br>
 <h1><u>Projects</u></h1>
   <p>9/4/2020<br><a class = "projects" href="https://www.kaggle.com/mrod17/titanic-classifier-competition-knn-no-sklearn" target="_blank">KNN Algorithm Without Sklearn</a>
       <br>Implementation of a KNN algorithm without the use of Python machine learning libraries.
