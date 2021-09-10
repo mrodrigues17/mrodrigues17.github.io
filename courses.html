@@ -335,6 +335,22 @@ td a:hover{background:#C38370; border-radius: 25px;height: 25px;transition: 0.3s
     </li>
   
     
+<li>
+<div id="myBtn12" class = "button">GEO 441: GIS For Community Development</div>
+
+<div id="myModal12" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span id = "span12" class="close">&times;</span>
+    <h3>GEO 441: GIS For Community Development</h3>
+    <p> This course will focus on applications of Geographic Information Systems (GIS) to community studies and community development. As an amalgam of information technologies (e.g. database management, Web 2.0) and earth measurement technologies (e.g. global positioning systems, remote sensing), GIS is rapidly entering the realm of community development. The course will explain how GIS works; enable students to learn techniques including mapping, spatial analysis, and data management; and provide students with the opportunity to apply GIS to community development. </p>
+    <p> My final project for this course is available for viewing <a class = "courses" href="https://github.com/mrodrigues17/mrodrigues17.github.io/blob/master/final_report_geo_441.pdf">here.</a>
+    
+    </div>
+</div>    
+    </li>
+    
     </ul>
    <p>*Passed the Graduate Admission Exam for Linear Algebra/Calculus to have the course waived.
     <br>
@@ -593,7 +609,23 @@ document.addEventListener("click", function(){
     if (event.target == modal11) {
         modal11.style.display = "none"}});
 </script>
-    
+
+<script>
+var modal12 = document.getElementById('myModal12');
+var btn12 = document.getElementById("myBtn12");
+var span12 = document.getElementById("span12");
+var test12 = document.getElementsByClassName("test12")
+
+btn12.onclick = function() {
+    modal12.style.display = "block";
+}
+span11.onclick = function() {
+    modal12.style.display = "none";
+}
+document.addEventListener("click", function(){
+    if (event.target == modal12) {
+        modal12.style.display = "none"}});
+</script>
 </div>
 
 </body>
