@@ -1,43 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="mystyle.css"></head>  
+<link rel="stylesheet" type="text/css" href="mystyle.css"></head>
 <style>
-
-
-
 div.container {
     min-width: 1000px;
 }
+body {
+    background-color: #158171;
+    font-family: Helvetica;
+    color: #bcbcbc;
+}
 header, footer {
     padding: 1em;
-    color: #F6EEE0;
-    background: url(banner.jpg);
+    /*color: #158171; */
+    /*color: #1bab78;*/
+    /*background: url(banner.jpg);*/
+    background-color: lightred;
+}
+    
     clear: left;
     text-align: center;
     /*background-size: auto;*/
     background-size:100% 100%;
-}
     
-.column {
-    float: left;
-    width:50%;
-    padding: 10px;
 }
+ .heading {color: #171717;}
+    
+ .subheading {color:#1bab78 }
 
- 
-.row:after {
-    content: "";
-    display: table;
-    clear:both;
-    }
 nav {
     float: left;
-    max-width: 500px;
+    max-width: 160px;
     margin: 0;
-    padding: 20px;
-    margin-left: 30%;
+    padding: 50 px;
 }
+
 nav ul {
     list-style-type: none;
     padding: 0;
@@ -46,61 +44,58 @@ nav ul {
 nav ul a {
     text-decoration: none;
 }
+
 article {
-    margin-left: 50px;
+    margin-left: 350px;
     padding: 1em;
-    overflow: hidden;
-    max-width: 500px;
-}
-th, td {
-    border: 1px solid black;
-}
+        width: 40%;
     
+}
+
+th, td {
+
+    transition: 0.3s;
+
+}
+
 .myTable td {
     width: 300px;
     border-radius: 25px;
-
-
 }
 a.tab {
-    color: white;
+    color: #171717;
     text-decoration: none;
-    }
+} 
     
-a.top {
-  color: white;
-  text-decoration: none;
-}
-a.projects{
-  text-decoration: none;
-
-}
-
-td{background:#A45C40;border:1px solid #000; color:white; transition: 0.3s;}
+    
+   
+td{background:#286f80; color:#bcbcbc; transition: 0.3s;}
 td a{display:block;position:relative}
-td a:hover{background:#C38370; border-radius: 25px;height: 25px;transition: 0.3s; color: white;}
-
+td a:hover{background:#3cdb7d; border-radius: 25px;height: 25px;transition: 0.3s; color: #bcbcbc;}
+    
 </style>
 </head>
-<body>
+
 
 <div class="container">
 
 <header>
-    <h1><a class = "top" href="index.html">Maximilian A. Rodrigues</a></h1>
-        <h3><a class = "top" href="index.html">Data Analyst at Claro Healthcare<br>M.S. in Data Science Candidate - DePaul University</a></h3>
+   <h1 class="heading">Maximilian A. Rodrigues</h1>
+          <h3 class="subheading">Data Analyst at Claro Healthcare<br>M.S. in Data Science - DePaul University</h3>
+
 
 <table align = "center" class = "myTable">
   <tr>
     <td align = "center" height="25"><a class = "tab" href="index.html">Home</a></td> 
     <td align = "center" height="25"><a class = "tab" href="projects.html">Projects</a></td> 
-    <td align = "center" height="25"><a class = "tab" href="courses.html">Coursework</a></td>
+    <td align = "center" height="25"><a class = "tab" href="courses.html">Coursework</a></td> 
     <td align = "center" height="25"><a class = "tab" href="publications.html">Publications</a></td>
     <td align = "center" height="25"><a class = "tab" href="experience.html">Experience</a></td>
 
   </tr>
+
 </table>
-    </header>
+</header>
 <div>
 
 <h1><u>Projects</u></h1>
