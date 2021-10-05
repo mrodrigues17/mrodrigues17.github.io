@@ -1,38 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="mystyle.css"></head>  
+<link rel="stylesheet" type="text/css" href="mystyle.css"></head>
 <style>
 div.container {
     min-width: 1000px;
-}
+    background-color: #286f80;
 
+}
+body {
+    background-color: #158171;
+    font-family: Helvetica;
+    color: #bcbcbc;
+    font-size: 18px;
+}
 header, footer {
     padding: 1em;
-    /*color: #F6EEE0; */
-    color: white;
-    background: url(banner.jpg);
+    /*color: #158171; */
+    /*color: #1bab78;*/
+    /*background: url(banner.jpg);*/
+    background-color: lightred;
+}
+    
     clear: left;
     text-align: center;
     /*background-size: auto;*/
     background-size:100% 100%;
     
 }
- .heading { color: white; }
+    
+ .subheading {color:#1bab78 }
 
 nav {
     float: left;
     max-width: 160px;
     margin: 0;
     padding: 50 px;
-    
-}
-
-hr.dotted {
-  border-top: 3px dotted black;
-}
-hr.new4 {
-  border: 2px solid black;
 }
 
 nav ul {
@@ -52,8 +55,7 @@ article {
 }
 
 th, td {
-    border: 1px solid black;
-    color: white;
+
     transition: 0.3s;
 
 }
@@ -63,29 +65,26 @@ th, td {
     border-radius: 25px;
 }
 a.tab {
-    color: white;
+    color: #bcbcbc;
     text-decoration: none;
 } 
-a.top {
-  color: white;
-  text-decoration: none;
-}
+    
     
    
-td{background:#A45C40;border:1px solid #000; color:white; transition: 0.3s;}
+td{background:#286f80; color:#bcbcbc; transition: 0.3s;}
 td a{display:block;position:relative}
-td a:hover{background:#C38370; border-radius: 25px;height: 25px;transition: 0.3s; color: white;}
+td a:hover{background:#286f80; border-radius: 25px;height: 25px;transition: 0.3s; color: #3cdb7d;}
     
 </style>
 </head>
-<body>
 
-<div class="container">
+
+
 
 <header>
-   <h1><a class = "top" href="index.html">Maximilian A. Rodrigues</a></h1>
-          <h3>Data Analyst at Claro Healthcare<br>M.S. in Data Science Candidate - DePaul University</h3>
-
+   <h1 class="heading">Maximilian Rodrigues</h1>
+          <h3 class="subheading">Data Analyst at Claro Healthcare<br>M.S. in Data Science - DePaul University</h3>
+<div class="container">
 
 <table align = "center" class = "myTable">
   <tr>
