@@ -1,29 +1,43 @@
 <!DOCTYPE html>
 <html>
-
-
 <head>
-
-<link rel="stylesheet" type="text/css" href="mystyle.css"></head>  
+<link rel="stylesheet" type="text/css" href="mystyle.css"></head>
 <style>
 div.container {
     min-width: 1000px;
+    background-color: #286f80;
+
+}
+body {
+    background-color: #158171;
+    font-family: Helvetica;
+    color: #bcbcbc;
+    font-size: 18px;
 }
 header, footer {
     padding: 1em;
-    color: white;
-    background: url(chicago.png);
+    /*color: #158171; */
+    /*color: #1bab78;*/
+    /*background: url(banner.jpg);*/
+    background-color: lightred;
+}
+    
     clear: left;
     text-align: center;
-    background-size: auto;
+    /*background-size: auto;*/
+    background-size:100% 100%;
+    
 }
+    
+ .subheading {color:#1bab78 }
+
 nav {
-    margin-left: 150px;
     float: left;
-    max-width: 250px;
+    max-width: 160px;
     margin: 0;
-    padding: 1em;
+    padding: 50 px;
 }
+
 nav ul {
     list-style-type: none;
     padding: 0;
@@ -32,32 +46,36 @@ nav ul {
 nav ul a {
     text-decoration: none;
 }
+
 article {
     margin-left: 350px;
     padding: 1em;
-    overflow: hidden;
-    width: 40%;
-}
-th, td {
-    border: 1px solid black;
-}
+        width: 40%;
     
-.myTable td, a {
+}
+
+th, td {
+
+    transition: 0.3s;
+
+}
+
+.myTable td {
     width: 300px;
     border-radius: 25px;
-    color: black;
-    text-decoration: none;
 }
-a.top {
-   text-decoration: none;
-   color: white;
-    }
-
-td{background:#C0B283;border:1px solid #000}
+a.tab {
+    color: #bcbcbc;
+    text-decoration: none;
+} 
+    
+    
+   
+td{background:#286f80; color:#bcbcbc; transition: 0.3s;}
 td a{display:block;position:relative}
-td a:hover{background:#DCD0C0;color:#fff;border-radius: 25px;height: 25px}
-</style>  
-  
+td a:hover{background:#286f80; border-radius: 25px;height: 25px;transition: 0.3s; color: #3cdb7d;}
+    
+</style>
   
   
   
@@ -144,16 +162,22 @@ $(document).ready(function () {
 <div class="container">
 
 <header>
-    <h1><a class = "top" href="index.html">Maximilian A. Rodrigues</a></h1>
-        <h3><a class = "top" href="index.html">Data Analyst at Claro Healthcare<br>M.S. in Data Science Candidate - DePaul University</a></h3>
+   <h1 class="heading">Maximilian Rodrigues</h1>
+          <h3 class="subheading">Data Analyst at Claro Healthcare<br>M.S. in Data Science - DePaul University</h3>
+<div class="container">
+
 <table align = "center" class = "myTable">
   <tr>
-    <td align = "center" height="25"><a href="index.html">Home</a></td> 
-    <td align = "center" height="25"><a href="projects.html">Projects</a></td> 
-    <td align = "center" height="25"><a href="courses.html">Coursework</a></td> 
+    <td align = "center" height="25"><a class = "tab" href="index.html">Home</a></td> 
+    <td align = "center" height="25"><a class = "tab" href="projects.html">Projects</a></td> 
+    <td align = "center" height="25"><a class = "tab" href="courses.html">Coursework</a></td> 
+    <td align = "center" height="25"><a class = "tab" href="publications.html">Publications</a></td>
+    <td align = "center" height="25"><a class = "tab" href="experience.html">Experience</a></td>
+
   </tr>
+
 </table>
-    </header>
+</header>
 
 
 
