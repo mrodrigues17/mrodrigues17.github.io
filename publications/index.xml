@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Publications on Portfolio home page</title>
+    <link>https://mrodrigues17.github.io/publications/</link>
+    <description>Recent content in Publications on Portfolio home page</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 02 Mar 2017 12:00:00 -0500</lastBuildDate><atom:link href="https://mrodrigues17.github.io/publications/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Moral tribalism and its discontents: How intuitive theories of ethics shape consumers&#39; deference to experts</title>
+      <link>https://mrodrigues17.github.io/publications/chapter-1/</link>
+      <pubDate>Thu, 11 Nov 2021 10:58:08 -0400</pubDate>
+      
+      <guid>https://mrodrigues17.github.io/publications/chapter-1/</guid>
+      <description>We study the psychology at the intersection of two social trends. First, as markets become increasingly specialized, consumers must increasingly defer to outside experts to decide among complex products. Second, people divide themselves increasingly into moral tribes, defining themselves in terms of shared values with their group and often seeing these values as being objectively right or wrong. We tested how and why these tribalistic tendencies affect consumers&#39; willingness to defer to experts.</description>
+    </item>
+    
+    <item>
+      <title>Predictions from Uncertain Moral Character</title>
+      <link>https://mrodrigues17.github.io/publications/chapter-2/</link>
+      <pubDate>Thu, 11 Nov 2021 10:58:08 -0400</pubDate>
+      
+      <guid>https://mrodrigues17.github.io/publications/chapter-2/</guid>
+      <description>People assess others’ moral characters to predict what they will do. Here, we study the computational mechanisms used to predict behavior from uncertain evidence about character. Whereas previous work has found that people often ignore hypotheses with low probabilities, we find that people often account for the possibility of poor moral character even when that possibility is relatively unlikely. There was no evidence that comparable inferences from uncertain non-moralized traits integrate across multiple possibilities.</description>
+    </item>
+    
+  </channel>
+</rss>
