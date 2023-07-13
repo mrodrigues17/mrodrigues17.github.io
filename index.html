@@ -41,7 +41,21 @@
 <meta name="twitter:title" content="Max Rodrigues"/>
 <meta name="twitter:description" content="Data Science Portfolio"/>
 
-	
+	<head>
+
+    
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false}
+            ]
+        });
+    });
+</script>
+</head>
   </head>
 
   <body class="ma0 avenir bg-near-white">
@@ -72,6 +86,12 @@
           </li>
           
           <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://mrodrigues17.github.io/blog/" title="Blog page">
+              Blog
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white no-underline white-90" href="https://mrodrigues17.github.io/contact/" title="Contact page">
               Contact
             </a>
@@ -84,8 +104,8 @@
           </li>
           
           <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="https://mrodrigues17.github.io/publications/" title="Publications page">
-              Publications
+            <a class="hover-white no-underline white-90" href="https://mrodrigues17.github.io/publications/" title="Publications/Papers page">
+              Publications/Papers
             </a>
           </li>
           
@@ -99,7 +119,7 @@
 
 
 
-<a href="https://www.linkedin.com/in/max-rodrigues-9198401bb/" target="_blank" class="link-transition linkedin link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+<a href="https://www.linkedin.com/in/max-r-134791232/" target="_blank" class="link-transition linkedin link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
   <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
 </svg>
@@ -181,24 +201,16 @@
   <div class="db pv4 ph3 ph0-l no-underline dark-gray">
     <div class="flex flex-column flex-row-ns">
       
-          
-        
-        <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
-          <a href="https://mrodrigues17.github.io/post/chapter-1/" class="db grow">
-            <img src="https://mrodrigues17.github.io/images/movie.jpeg" class="img" alt="image from Movie Recommender System Using Content-Based Filtering">
-          </a>
-        </div>
-      
-      <div class="blah w-100 w-60-ns pl3-ns">
+      <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="https://mrodrigues17.github.io/post/chapter-1/" class="color-inherit dim link">
-            Movie Recommender System Using Content-Based Filtering
+          <a href="https://mrodrigues17.github.io/post/linear_regression/" class="color-inherit dim link">
+            The Math Behind Machine Learning Algorithms: Linear Regression
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          Used data from IMDb to do feature engineering and create sparse matrices. Using cosine similarity, users select a vector of interest by indicating a movie title they like to get movie titles similar to the title they entered. The user can also specify the number of movies returned. UI file: controls user interface included the ability to select movie titles and the number of recommendations Server file: creates the output for the Shiny application data cleaning file: reads data from IMDb files and performs filtering and feature transformations  Github with UI, Server, and R data cleaning files available here
+          Despite its simplicity, linear regression is one of the most ubiquitous machine learning algorithms used today. Linear regression often ends up being a better model choice than more complicated ones because linear regression is easy to interpret and complicated models may overfit the data. Even though linear regression is considered simple in the realm of machine learning models, it is easy to treat models as black boxes without understanding the algorithm, and understanding how linear regression actually gets calculated lays the foundation for understanding more complex algorithms.
         </div>
-          <a href="https://mrodrigues17.github.io/post/chapter-1/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+          <a href="https://mrodrigues17.github.io/post/linear_regression/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
         
       </div>
     </div>
@@ -216,22 +228,22 @@
           
         
         <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
-          <a href="https://mrodrigues17.github.io/post/chapter-2/" class="db grow">
-            <img src="https://mrodrigues17.github.io/images/police.jpeg" class="img" alt="image from Visualization of the Washington Post Police Killings Dataset">
+          <a href="https://mrodrigues17.github.io/post/chapter-1/" class="db grow">
+            <img src="https://mrodrigues17.github.io/images/movie.jpeg" class="img" alt="image from Content-Based Filtering Movie Recommender System Using Cosine Similarity in RShiny">
           </a>
         </div>
       
       <div class="blah w-100 w-60-ns pl3-ns">
         <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="https://mrodrigues17.github.io/post/chapter-2/" class="color-inherit dim link">
-            Visualization of the Washington Post Police Killings Dataset
+          <a href="https://mrodrigues17.github.io/post/chapter-1/" class="color-inherit dim link">
+            Content-Based Filtering Movie Recommender System Using Cosine Similarity in RShiny
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          Police Killings Visualized The application shows police killing trends over the last few years (data collection began in 2015 by the Washington Post). Data is pulled directly from the Washington Post&rsquo;s Github.
-R code combines data from the US Census Bureau, application available here
+          Using data taken from IMDb,
+ Used data take from IMDb to do feature engineering and create sparse matrices. Using cosine similarity, users select a vector of interest by indicating a movie title they like to get movie titles similar to the title they entered. The user can also specify the number of movies returned. UI file: controls user interface included the ability to select movie titles and the number of recommendations Server file: creates the output for the Shiny application data cleaning file: reads data from IMDb files and performs filtering and feature transformations  Github with UI, Server, and R data cleaning files available here
         </div>
-          <a href="https://mrodrigues17.github.io/post/chapter-2/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+          <a href="https://mrodrigues17.github.io/post/chapter-1/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
         
       </div>
     </div>
@@ -246,6 +258,12 @@ R code combines data from the US Census Bureau, application available here
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="https://mrodrigues17.github.io/post/chapter-2/" class="link black dim">
+              Visualization of the Washington Post Police Killings Dataset
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://mrodrigues17.github.io/post/chapter-4/" class="link black dim">
@@ -274,7 +292,7 @@ R code combines data from the US Census Bureau, application available here
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://mrodrigues17.github.io/" >
-    &copy;  Portfolio home page 2021 
+    &copy;  Portfolio home page 2023 
   </a>
     <div>
 
@@ -284,7 +302,7 @@ R code combines data from the US Census Bureau, application available here
 
 
 
-<a href="https://www.linkedin.com/in/max-rodrigues-9198401bb/" target="_blank" class="link-transition linkedin link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+<a href="https://www.linkedin.com/in/max-r-134791232/" target="_blank" class="link-transition linkedin link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
   <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
 </svg>

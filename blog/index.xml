@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on Portfolio home page</title>
+    <link>https://mrodrigues17.github.io/blog/</link>
+    <description>Recent content in Blog on Portfolio home page</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 02 Mar 2017 12:00:00 -0500</lastBuildDate><atom:link href="https://mrodrigues17.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Math Behind Machine Learning Algorithms: Linear Regression</title>
+      <link>https://mrodrigues17.github.io/blog/linear_regression/</link>
+      <pubDate>Wed, 12 Jul 2023 10:58:08 -0400</pubDate>
+      
+      <guid>https://mrodrigues17.github.io/blog/linear_regression/</guid>
+      <description>Despite its simplicity, linear regression is one of the most ubiquitous machine learning algorithms used today. Linear regression often ends up being a better model choice than more complicated ones because linear regression is easy to interpret and complicated models may overfit the data. Even though linear regression is considered simple in the realm of machine learning models, it is easy to treat models as black boxes without understanding the algorithm, and understanding how linear regression actually gets calculated lays the foundation for understanding more complex algorithms.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>The Math Behind Machine Learning Algorithms: Linear Regression | Portfolio home page</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Despite its simplicity, linear regression is one of the most ubiquitous machine learning algorithms used today. Linear regression often ends up being a better model choice than more complicated ones because linear regression is easy to interpret and complicated models may overfit the data. Even though linear regression is considered simple in the realm of machine learning models, it is easy to treat models as black boxes without understanding the algorithm, and understanding how linear regression actually gets calculated lays the foundation for understanding more complex algorithms.">
+    <meta name="generator" content="Hugo 0.89.2" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+<link rel="stylesheet" href="https://mrodrigues17.github.io/ananke/css/main.min.css" >
+
+
+
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="The Math Behind Machine Learning Algorithms: Linear Regression" />
+<meta property="og:description" content="Despite its simplicity, linear regression is one of the most ubiquitous machine learning algorithms used today. Linear regression often ends up being a better model choice than more complicated ones because linear regression is easy to interpret and complicated models may overfit the data. Even though linear regression is considered simple in the realm of machine learning models, it is easy to treat models as black boxes without understanding the algorithm, and understanding how linear regression actually gets calculated lays the foundation for understanding more complex algorithms." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mrodrigues17.github.io/post/linear_regression/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-07-12T10:58:08-04:00" />
+<meta property="article:modified_time" content="2023-07-12T10:58:08-04:00" /><meta property="og:site_name" content="Portfolio home page" />
+
+<meta itemprop="name" content="The Math Behind Machine Learning Algorithms: Linear Regression">
+<meta itemprop="description" content="Despite its simplicity, linear regression is one of the most ubiquitous machine learning algorithms used today. Linear regression often ends up being a better model choice than more complicated ones because linear regression is easy to interpret and complicated models may overfit the data. Even though linear regression is considered simple in the realm of machine learning models, it is easy to treat models as black boxes without understanding the algorithm, and understanding how linear regression actually gets calculated lays the foundation for understanding more complex algorithms."><meta itemprop="datePublished" content="2023-07-12T10:58:08-04:00" />
+<meta itemprop="dateModified" content="2023-07-12T10:58:08-04:00" />
+<meta itemprop="wordCount" content="1333">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="The Math Behind Machine Learning Algorithms: Linear Regression"/>
+<meta name="twitter:description" content="Despite its simplicity, linear regression is one of the most ubiquitous machine learning algorithms used today. Linear regression often ends up being a better model choice than more complicated ones because linear regression is easy to interpret and complicated models may overfit the data. Even though linear regression is considered simple in the realm of machine learning models, it is easy to treat models as black boxes without understanding the algorithm, and understanding how linear regression actually gets calculated lays the foundation for understanding more complex algorithms."/>
+
+	<head>
+
+    
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t" crossorigin="anonymous"></script>
+
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+  </head>
+  ...
+</html>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false}
+            ]
+        });
+    });
+</script>
+</head>
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://mrodrigues17.github.io/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Portfolio home page
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://mrodrigues17.github.io/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://mrodrigues17.github.io/blog/" title="Blog page">
+              Blog
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://mrodrigues17.github.io/contact/" title="Contact page">
+              Contact
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://mrodrigues17.github.io/post/" title="Projects page">
+              Projects
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://mrodrigues17.github.io/publications/" title="Publications/Papers page">
+              Publications/Papers
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+<a href="https://www.linkedin.com/in/max-r-134791232/" target="_blank" class="link-transition linkedin link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+<a href="https://github.com/mrodrigues17" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        PROJECTS
+      </aside>
+      
+
+
+
+
+<div id="sharing" class="mt3">
+
+  
+  <a href="https://www.facebook.com/sharer.php?u=https://mrodrigues17.github.io/post/linear_regression/" class="facebook no-underline" aria-label="share on Facebook">
+    <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+  </a>
+
+  
+  
+  <a href="https://twitter.com/share?url=https://mrodrigues17.github.io/post/linear_regression/&amp;text=The%20Math%20Behind%20Machine%20Learning%20Algorithms:%20Linear%20Regression" class="twitter no-underline" aria-label="share on Twitter">
+    <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+  </a>
+
+  
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://mrodrigues17.github.io/post/linear_regression/&amp;title=The%20Math%20Behind%20Machine%20Learning%20Algorithms:%20Linear%20Regression" class="linkedin no-underline" aria-label="share on LinkedIn">
+    <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+  </a>
+</div>
+
+      <h1 class="f1 athelas mt3 mb1">The Math Behind Machine Learning Algorithms: Linear Regression</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2023-07-12T10:58:08-04:00">July 12, 2023</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>Despite its simplicity, linear regression is one of the most ubiquitous machine learning algorithms used today. Linear regression often ends up being a better model choice than more complicated ones because linear regression is easy to interpret and complicated models may overfit the data. Even though linear regression is considered simple in the realm of machine learning models, it is easy to treat models as black boxes without understanding the algorithm, and understanding how linear regression actually gets calculated lays the foundation for understanding more complex algorithms. In this article, I want to describe in detail the linear regression algorithm and how it can be programmed in Python with only a few lines of code.</p>
+<h1 id="the-goal-of-linear-regression">The goal of linear regression</h1>
+<p>For supervised machine learning problems, we are interested in taking a set of features $x$ and feeding these features into a learning algorithm that will output a function that can be used to predict values of some target variable $Y$. I will refer to this function as $h(x)$, and it is also referred to as (albeit somewhat of a misnomer) the hypothesis. The formula for this function in linear regression is:</p>
+<p>$$h(x) = \sum_{j=0}^{n}\theta_j x_j$$</p>
+<p>Where we set $x_0 = 1$ as a dummy feature, n is the number of features and $\theta$ represents the parameters. The function is a linear combination of the features $x$ and the parameters $\theta$, and the goal is to determine the best values of $\theta$ to accurately capture the mapping between the features $x$ and target $Y$.</p>
+<h1 id="the-loss-function">The loss function</h1>
+<p>The job of the learning algorithm is to choose values of $\theta$ that minimize the error between predicted and actual values of $Y$. All machine learning algorithms have a cost function that is used to optimize the values of the model parameters (in the case of linear regression, this is $\theta$). The cost function $J(\theta)$ for linear regression is least squares, and that function is:</p>
+<p>$$J(\theta) = \frac{1}{2}\sum_{i=1}^{m}(h_{\theta}(x)-y)^2$$</p>
+<p>The $\frac{1}{2}$ is put there to make the derivation easier when optimizing the cost function. $m$ refers to the number of training samples and $h_\theta(x)$ are the predicted values. We can write a function in Python that does this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">lr_cost_func</span>(X, theta, y):
+    <span style="color:#e6db74">&#34;&#34;&#34;Returns the cost function for linear regression
+</span><span style="color:#e6db74">     Parameters
+</span><span style="color:#e6db74">     ----------
+</span><span style="color:#e6db74">        X: matrix
+</span><span style="color:#e6db74">            The features used for prediction
+</span><span style="color:#e6db74">        theta: array
+</span><span style="color:#e6db74">            The coefficients multiplied against the features
+</span><span style="color:#e6db74">        y: array
+</span><span style="color:#e6db74">            The actual target values
+</span><span style="color:#e6db74">    Return
+</span><span style="color:#e6db74">    ------
+</span><span style="color:#e6db74">        cost: float
+</span><span style="color:#e6db74">            The value of the cost function for the given inputs
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    cost <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">/</span> (<span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> len(y))) <span style="color:#f92672">*</span> sum((np<span style="color:#f92672">.</span>dot(X, theta) <span style="color:#f92672">-</span> y)<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>)
+    <span style="color:#66d9ef">return</span> cost
+</code></pre></div><p>However, the loss function by itself is not that useful when the goal is to optimize the parameters of the model. We need an algorithm that will iteratively update the model parameters to a point where the loss function is minimized.</p>
+<h1 id="calculating-the-gradient">Calculating the gradient</h1>
+<p>In order to optimize the parameters of the linear regression, we need to calculate the gradient. The gradient is the derivative of a function, and this defines the direction of steepest descent for the function.</p>
+<p>$$ \frac{\partial}{\partial \theta_j} J(\theta) = \frac{\partial}{\partial \theta_j} \frac{1}{2}\sum_{i=1}^{m}(h_{\theta}(x)-y)^2$$</p>
+<p>Using the chain rule from calculus, we take the derivative of what is inside the function and multiply it by what is outside, and the squared value is cancelled out by the $\frac{1}{2}$ from the power rule. This simplifies to:</p>
+<p>$$ \sum_{i=1}^{m}(h_{\theta}(x^{(i)})-y^{(i)}) x_j^{(i)}$$</p>
+<p>And in python, this can be written as:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">lr_cost_deriv</span>(X, theta, j, y):
+    <span style="color:#e6db74">&#34;&#34;&#34;Calculates the derivative of the cost function for linear regression
+</span><span style="color:#e6db74">     Parameters
+</span><span style="color:#e6db74">     ----------
+</span><span style="color:#e6db74">        X: matrix
+</span><span style="color:#e6db74">            The features used for prediction
+</span><span style="color:#e6db74">        theta: array
+</span><span style="color:#e6db74">            An array of coefficients to optimize
+</span><span style="color:#e6db74">        j: int
+</span><span style="color:#e6db74">            Iterator to indicate which feature to calculate the partial derivative for
+</span><span style="color:#e6db74">        y: array
+</span><span style="color:#e6db74">            The target values
+</span><span style="color:#e6db74">    Return
+</span><span style="color:#e6db74">    ------
+</span><span style="color:#e6db74">        cost: float
+</span><span style="color:#e6db74">            The value of the cost function for the given inputs
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>    
+    gradient <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>dot(X[:, j], np<span style="color:#f92672">.</span>dot(X, theta) <span style="color:#f92672">-</span> y)
+    <span style="color:#66d9ef">return</span> gradient
+</code></pre></div><p>The calculated gradient above is then used in the algorithm known as gradient descent.</p>
+<h1 id="gradient-descent">Gradient Descent</h1>
+<p>The purpose of gradient descent is to minimize a cost function. As an analogy, think about being blindfolded at the top of a hill and you are told to slowly work your way down until you reach the bottom. You will eventually feel as though you are no longer descending, but if you took your blindfold off you may notice that you just reached a flat part of the hill and the hill continues to go downward elsewhere. You reached a &ldquo;local minimum&rdquo; of that part of the hill, but you did not reach the lowest point of the entire hill (the &ldquo;global minimum&rdquo;). In a machine learning context, we would ideally like to find a global minimum, but the nature of the algorithm tells us to stop searching once we reach the lowest point at some part of the function.</p>
+<p>The gradient descent algorithm works by iteratively updating the parameters $\theta$ by finding the negative of the gradient (which finds the direction of maximum decrease in the cost function). We multiply the negative of the gradient by a parameter known as the learning rate which is typically represented as $\alpha$. The learning rate is important because if we set it to a value that is too high, the algorithm will never converge, and if the rate is set to something too low it will eventually converge but may take more iterations than is necessary. The formula for iteratively updating the theta parameters is:</p>
+<p>$$\theta_j = \theta_j-\alpha \sum_{i=1}^{m}(h_{\theta}(x^{(i)})-y^{(i)}) x_j^{(i)}$$</p>
+<p>As a note, the $i$s do not represent exponentiation but instead correspond to a row of data with $m$ total rows. $j$ corresponds to the index of a feature with $n$ total features.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">lr_gradient_descent</span>(X, y, learning_rate, max_iter):
+    <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">    Perfoms batch gradient descent algorithm and returns the optimized intercept and coefficients
+</span><span style="color:#e6db74">    Parameters
+</span><span style="color:#e6db74">    ----------
+</span><span style="color:#e6db74">        X: matrix
+</span><span style="color:#e6db74">            The matrix of features
+</span><span style="color:#e6db74">        y: array
+</span><span style="color:#e6db74">            Array of targets
+</span><span style="color:#e6db74">        learning_rate: float
+</span><span style="color:#e6db74">            Indicates size of steps taken during gradient descent. Large values may not converge, small values will take longer
+</span><span style="color:#e6db74">        max_iter: int
+</span><span style="color:#e6db74">            The number of iterations of gradient descent to take
+</span><span style="color:#e6db74">    Return
+</span><span style="color:#e6db74">    ------
+</span><span style="color:#e6db74">        intercept: float
+</span><span style="color:#e6db74">            The intercept for the linear regression model
+</span><span style="color:#e6db74">        coefs: aray
+</span><span style="color:#e6db74">            An array of coefficients that can be multiplied against the features
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    theta <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">0.0</span> <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(X<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">1</span>])])
+    theta_temp <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">0.0</span> <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(X<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">1</span>])]) <span style="color:#75715e">#initialize an array with zeros</span>
+    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(max_iter): 
+        <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(len(theta)):
+            theta_temp[j] <span style="color:#f92672">=</span> theta[j] <span style="color:#f92672">-</span> learning_rate <span style="color:#f92672">*</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">/</span> (len(y))) <span style="color:#f92672">*</span> lr_cost_deriv(X<span style="color:#f92672">=</span>X, theta<span style="color:#f92672">=</span>theta, j<span style="color:#f92672">=</span>j, y<span style="color:#f92672">=</span>y)
+        theta <span style="color:#f92672">=</span> theta_temp
+    intercept <span style="color:#f92672">=</span> theta[<span style="color:#ae81ff">0</span>]
+    coefs <span style="color:#f92672">=</span> theta[<span style="color:#ae81ff">1</span>:]
+    <span style="color:#66d9ef">return</span> intercept, coefs
+
+x_train_int <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>insert(x_train, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>) <span style="color:#75715e"># add a column of ones for the intercept</span>
+intercept, coefs <span style="color:#f92672">=</span> lr_gradient_descent(x_train_int, y_train, <span style="color:#ae81ff">.00001</span>, <span style="color:#ae81ff">1000</span>) 
+y_pred <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>dot(x_test, coefs) <span style="color:#f92672">+</span> intercept <span style="color:#75715e"># calculate predicted values on the test set</span>
+</code></pre></div><p>Taking a very simple dataset, plotting the predicted values against the actual target values shows that the model accurately captures the linear relationship.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">10</span>))
+plt<span style="color:#f92672">.</span>scatter(y_test, y_pred, c<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;crimson&#39;</span>)
+
+p1 <span style="color:#f92672">=</span> max(max(y_pred), max(y_test))
+p2 <span style="color:#f92672">=</span> min(min(y_pred), min(y_test))
+plt<span style="color:#f92672">.</span>plot([p1, p2], [p1, p2], <span style="color:#e6db74">&#39;b-&#39;</span>)
+plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;True Values&#39;</span>, fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">15</span>)
+plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;Predictions&#39;</span>, fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">15</span>)
+plt<span style="color:#f92672">.</span>axis(<span style="color:#e6db74">&#39;equal&#39;</span>)
+plt<span style="color:#f92672">.</span>show()
+</code></pre></div><p><img src="https://mrodrigues17.github.io/lm_output.png" alt="Linear Regression Plot"></p>
+<h1 id="summary">Summary</h1>
+<p>The algorithm for building a linear regression model is relatively simple, as a review the steps are:</p>
+<ol>
+<li>Initialize a vector with zeros that corresponds to the theta parameters. There should be one theta for every feature and a theta for the intercept</li>
+<li>Find the gradient (derivative of the cost function) with respect to each theta and update the theta by adding the negative of the gradient multiplied by the learning rate.</li>
+<li>With the newly found theta parameters, find the dot product of the coefficients and the features and add the intercept to get the predicted target values.</li>
+</ol>
+<p>In cases of larger datasets, we would use stochastic gradient descent rather than batch gradient descent. The difference between the two is that stochastic gradient descent looks at a single sample (or batch of samples) in each iteration rather than the entire dataset, which allows for much better scalability if the dataset is large. These concepts are found in many machine learning algorithms, so it is important to understand how and why gradient descent works.</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://mrodrigues17.github.io/" >
+    &copy;  Portfolio home page 2023 
+  </a>
+    <div>
+
+
+
+
+
+
+
+<a href="https://www.linkedin.com/in/max-r-134791232/" target="_blank" class="link-transition linkedin link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+<a href="https://github.com/mrodrigues17" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
