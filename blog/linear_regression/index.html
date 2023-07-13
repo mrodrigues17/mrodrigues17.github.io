@@ -36,7 +36,7 @@
 <meta itemprop="name" content="The Math Behind Machine Learning Algorithms: Linear Regression">
 <meta itemprop="description" content="Despite its simplicity, linear regression is one of the most ubiquitous machine learning algorithms used today. Linear regression often ends up being a better model choice than more complicated ones because linear regression is easy to interpret and complicated models may overfit the data. Even though linear regression is considered simple in the realm of machine learning models, it is easy to treat models as black boxes without understanding the algorithm, and understanding how linear regression actually gets calculated lays the foundation for understanding more complex algorithms."><meta itemprop="datePublished" content="2023-07-12T10:58:08-04:00" />
 <meta itemprop="dateModified" content="2023-07-12T10:58:08-04:00" />
-<meta itemprop="wordCount" content="1333">
+<meta itemprop="wordCount" content="1329">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="The Math Behind Machine Learning Algorithms: Linear Regression"/>
 <meta name="twitter:description" content="Despite its simplicity, linear regression is one of the most ubiquitous machine learning algorithms used today. Linear regression often ends up being a better model choice than more complicated ones because linear regression is easy to interpret and complicated models may overfit the data. Even though linear regression is considered simple in the realm of machine learning models, it is easy to treat models as black boxes without understanding the algorithm, and understanding how linear regression actually gets calculated lays the foundation for understanding more complex algorithms."/>
@@ -265,10 +265,10 @@
 </span><span style="color:#e6db74">            The target values
 </span><span style="color:#e6db74">    Return
 </span><span style="color:#e6db74">    ------
-</span><span style="color:#e6db74">        cost: float
-</span><span style="color:#e6db74">            The value of the cost function for the given inputs
+</span><span style="color:#e6db74">        gradient: float
+</span><span style="color:#e6db74">            The derivative of the cost function
 </span><span style="color:#e6db74">    &#34;&#34;&#34;</span>    
-    gradient <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>dot(X[:, j], np<span style="color:#f92672">.</span>dot(X, theta) <span style="color:#f92672">-</span> y)
+    gradient <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>dot(np<span style="color:#f92672">.</span>dot(X, theta) <span style="color:#f92672">-</span> y, X[:, j])
     <span style="color:#66d9ef">return</span> gradient
 </code></pre></div><p>The calculated gradient above is then used in the algorithm known as gradient descent.</p>
 <h1 id="gradient-descent">Gradient Descent</h1>
