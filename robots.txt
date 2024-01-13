@@ -1,4 +1,4 @@
-User-agent: *
+User-agent: LinkedInBot
 # robotstxt.org - if ENV production variable is false robots will be disallowed.
 
 Disallow: /
