@@ -8,6 +8,15 @@
     <language>en-us</language>
     <lastBuildDate>Thu, 02 Mar 2017 12:00:00 -0500</lastBuildDate><atom:link href="https://mrodrigues17.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Navigating Uncertainty with Bayesian Statistics</title>
+      <link>https://mrodrigues17.github.io/blog/bayesian_statistics_overview/</link>
+      <pubDate>Sat, 13 Jan 2024 10:58:08 -0400</pubDate>
+      
+      <guid>https://mrodrigues17.github.io/blog/bayesian_statistics_overview/</guid>
+      <description>Picture this: you just woke up, and as you go about your morning routine, the question lingers – will it rain today, and should you grab an umbrella? There&amp;rsquo;s a subtle assumption about the likelihood of rain on any given day, but you have the means to fine-tune this probability. Gazing out of your window, you observe the clouds overhead; this observation shifts your initial assumption, tilting it toward a higher chance of rain.</description>
+    </item>
+    
+    <item>
       <title>The Math Behind Machine Learning Algorithms: Linear Regression</title>
       <link>https://mrodrigues17.github.io/blog/linear_regression/</link>
       <pubDate>Wed, 12 Jul 2023 10:58:08 -0400</pubDate>

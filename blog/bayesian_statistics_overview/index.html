@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Navigating Uncertainty with Bayesian Statistics | Portfolio home page</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Picture this: you just woke up, and as you go about your morning routine, the question lingers – will it rain today, and should you grab an umbrella? There&rsquo;s a subtle assumption about the likelihood of rain on any given day, but you have the means to fine-tune this probability. Gazing out of your window, you observe the clouds overhead; this observation shifts your initial assumption, tilting it toward a higher chance of rain.">
+    <meta name="generator" content="Hugo 0.89.2" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+<link rel="stylesheet" href="https://mrodrigues17.github.io/ananke/css/main.min.css" >
+
+
+
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Navigating Uncertainty with Bayesian Statistics" />
+<meta property="og:description" content="Picture this: you just woke up, and as you go about your morning routine, the question lingers – will it rain today, and should you grab an umbrella? There&rsquo;s a subtle assumption about the likelihood of rain on any given day, but you have the means to fine-tune this probability. Gazing out of your window, you observe the clouds overhead; this observation shifts your initial assumption, tilting it toward a higher chance of rain." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mrodrigues17.github.io/blog/bayesian_statistics_overview/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2024-01-13T10:58:08-04:00" />
+<meta property="article:modified_time" content="2024-01-13T10:58:08-04:00" /><meta property="og:site_name" content="Portfolio home page" />
+
+<meta itemprop="name" content="Navigating Uncertainty with Bayesian Statistics">
+<meta itemprop="description" content="Picture this: you just woke up, and as you go about your morning routine, the question lingers – will it rain today, and should you grab an umbrella? There&rsquo;s a subtle assumption about the likelihood of rain on any given day, but you have the means to fine-tune this probability. Gazing out of your window, you observe the clouds overhead; this observation shifts your initial assumption, tilting it toward a higher chance of rain."><meta itemprop="datePublished" content="2024-01-13T10:58:08-04:00" />
+<meta itemprop="dateModified" content="2024-01-13T10:58:08-04:00" />
+<meta itemprop="wordCount" content="2980">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Navigating Uncertainty with Bayesian Statistics"/>
+<meta name="twitter:description" content="Picture this: you just woke up, and as you go about your morning routine, the question lingers – will it rain today, and should you grab an umbrella? There&rsquo;s a subtle assumption about the likelihood of rain on any given day, but you have the means to fine-tune this probability. Gazing out of your window, you observe the clouds overhead; this observation shifts your initial assumption, tilting it toward a higher chance of rain."/>
+
+	<head>
+
+    
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t" crossorigin="anonymous"></script>
+
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+  </head>
+  ...
+</html>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false}
+            ]
+        });
+    });
+</script>
+</head>
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://mrodrigues17.github.io/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Portfolio home page
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://mrodrigues17.github.io/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://mrodrigues17.github.io/blog/" title="Blog page">
+              Blog
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://mrodrigues17.github.io/contact/" title="Contact page">
+              Contact
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://mrodrigues17.github.io/post/" title="Projects page">
+              Projects
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://mrodrigues17.github.io/publications/" title="Publications/Papers page">
+              Publications/Papers
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+<a href="https://www.linkedin.com/in/max-r-134791232/" target="_blank" class="link-transition linkedin link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+<a href="https://github.com/mrodrigues17" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        BLOG
+      </aside>
+      
+
+
+
+
+<div id="sharing" class="mt3">
+
+  
+  <a href="https://www.facebook.com/sharer.php?u=https://mrodrigues17.github.io/blog/bayesian_statistics_overview/" class="facebook no-underline" aria-label="share on Facebook">
+    <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+  </a>
+
+  
+  
+  <a href="https://twitter.com/share?url=https://mrodrigues17.github.io/blog/bayesian_statistics_overview/&amp;text=Navigating%20Uncertainty%20with%20Bayesian%20Statistics" class="twitter no-underline" aria-label="share on Twitter">
+    <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+  </a>
+
+  
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://mrodrigues17.github.io/blog/bayesian_statistics_overview/&amp;title=Navigating%20Uncertainty%20with%20Bayesian%20Statistics" class="linkedin no-underline" aria-label="share on LinkedIn">
+    <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+  </a>
+</div>
+
+      <h1 class="f1 athelas mt3 mb1">Navigating Uncertainty with Bayesian Statistics</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2024-01-13T10:58:08-04:00">January 13, 2024</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>Picture this: you just woke up, and as you go about your morning routine, the question lingers – will it rain today, and should you grab an umbrella? There&rsquo;s a subtle assumption about the likelihood of rain on any given day, but you have the means to fine-tune this probability. Gazing out of your window, you observe the clouds overhead; this observation shifts your initial assumption, tilting it toward a higher chance of rain. Consulting the weather app on your phone reinforces this notion as it predicts rain in the forecast. Despite acknowledging the fallibility of the app, you recalibrate your beliefs, silently concluding, &lsquo;It&rsquo;s probably going to rain; I should grab my umbrella.&rsquo; This process, characterized by initial beliefs adapting to new information, lies at the heart of Bayesian Statistics.</p>
+<p>Bayesian Statistics is a versatile solution to solve a multitude of different problems, everything from calculating in-game win probabilities for sporting events (Robberechts et al., 2021) to determining the properties of black holes (Talbot &amp; Thrane, 2017). To kick off this introduction, let&rsquo;s delve into a mathematical theorem with a rich history that is over 250 years old.</p>
+<h1 id="bayes-theorem">Bayes' Theorem</h1>
+<p>Bayes' Theorem is a mathematical formula used to determine conditional probability, and it can be used to update the probability of some hypothesis given new information. In terms of a hypothesis <em>H</em> and some data <em>D</em>, we can write out Baye&rsquo;s Theorem as:</p>
+<p>$$P(H|D) = \frac{P(D|H)P(H)}{P(D)}$$</p>
+<p>If you are rusty on probability notation, note that &ldquo;|&rdquo; just means &ldquo;given&rdquo;, so <em>P(H|D)</em> is read as &ldquo;the probability of the hypothesis given the data&rdquo;.</p>
+<h2 id="bayes-theorem-example">Bayes' Theorem Example</h2>
+<p>As a simple example, let&rsquo;s say I randomly select an adult person from the town you live in, and I want you to guess whether the person I selected is a man or a woman. You decide to be savvy and look up demographic data on your town online, finding that your town has slightly more men than women, with 55% of the town&rsquo;s population being men. At this point, guessing that the person is a man is your best guess, but it isn&rsquo;t much better than a coin flip.</p>
+<p>However, let&rsquo;s say I give you an additional piece of information: the person is <em>at least</em> 6 feet tall. Now you are quite sure the person is a man, but you decide to use your knowledge of Bayes&rsquo;s Theorem to determine how sure you should be. Once again, you use Google to find that about 1% of women are at least 6 feet tall, and about 15% of men are at least 6 feet tall. Assuming this fact holds true in the town you live in, we can use Bayes&rsquo;s Theorem to update our beliefs.</p>
+<p>Let&rsquo;s first look at each piece of Bayes' Theorem:</p>
+<ul>
+<li><em>P(H)</em>: This is referred to as the <strong>prior probability</strong> (typically just referred to as the prior). This is the underlying probability of the hypoethesis before seeing new information, and this would be 55% in the example above.</li>
+<li><em>P(D|H)</em>: This is referred to as the <strong>likelihood</strong>, and it is the probability of the data under the hypothesis. If our hypothesis is that the person is a woman, this would be 1%. If our hypothesis is that the person is a man, this would be 15%.</li>
+<li><em>P(D)</em>: This is the total probability of the data, and this is sometimes referred to as the <strong>normalizing constant</strong>. This is because we first calculate the &ldquo;unnormalized posteriors&rdquo; in the numerator by multiplying the <strong>prior</strong> by the <strong>likelihood</strong>, and the numerator is called unnormalized because these unnormalized posteriors won&rsquo;t add up to 1 (this will be made more clear below).</li>
+<li><em>P(H|D)</em>: This is referred to as the <strong>posterior</strong>. This is the probability of the hypothesis (that we have chosen either a male or female) given the data (the person is at least 6 feet tall).</li>
+</ul>
+<p>We can create a Bayes table that places each section of Bayes' Theorem into a column with the corresponding values</p>
+<table>
+<thead>
+<tr>
+<th>Gender   </th>
+<th>Prior  </th>
+<th>Likelihood  </th>
+<th style="text-align:left">Unnormalized Factor  </th>
+<th>Posterior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Male</td>
+<td>0.55</td>
+<td>0.15</td>
+<td style="text-align:left">0.0825</td>
+<td>0.9482</td>
+</tr>
+<tr>
+<td>Female</td>
+<td>0.45</td>
+<td>0.01</td>
+<td style="text-align:left">0.0045</td>
+<td>0.0518</td>
+</tr>
+</tbody>
+</table>
+<p>The probability of the data <em>P(D)</em> is the weighted average of the unnormalized posteriors, so putting this Bayes Table view as formulas (with 6F shorthand for &ldquo;6 feet tall&rdquo;), we get:</p>
+<p>$$P(Man|6F) = \frac{P(6F|Man)P(Man)}{P(6F)}$$</p>
+<p>This works out to be:</p>
+<p>$$ P(Man|6F) = \frac{0.15 * 0.55}{(0.55 * 0.15) + (0.45 * 0.01)}$$</p>
+<p>Which means there is a 94.82% probability that the person we selected is a man.</p>
+<p>In this example, we are providing a single value for the probability we selected a man whereas Bayesian statistics typically deals with probability distributions. In the next section, I will show how we can use distributions to solve inference problems.</p>
+<h2 id="statistical-vs-bayesian-inference">Statistical vs Bayesian Inference</h2>
+<p>To demonstrate Bayesian inference, I will walk through a silly example using both the frequentist approach and the Bayesian approach, focusing on the same topic of men&rsquo;s heights. Let&rsquo;s say you work for a men&rsquo;s &ldquo;big and tall&rdquo; company, and they are considering opening a store in one of two towns, Shelbyville and Springfield. Management would prefer to open in the town that has taller men. You did a little scouting and have a hunch that the men in Springfield are a bit taller. Your company conducts a survey in the two towns, asking men about their heights, and you will use that data to test your hypothesis that Springfield men are taller than men in Shelbyville.</p>
+<h3 id="statistical-frequentist-approach">Statistical (Frequentist) Approach</h3>
+<p>With frequentist inference, the goal is to make inferences about parameters based on observed data. The steps include</p>
+<p><strong>1. Define the Hypothesis</strong>: You define the following hypothesis:</p>
+<p>$H_0$: The average height of men in Springfield is less than or equal to the average height of men in Shelbyville.</p>
+<p>$H_a$: The average height of men in Springfield is greater than the average height of men in Shelbyville.</p>
+<p><strong>2. Collect Data</strong>: The experimenter would collect height data from the town. I went ahead and &ldquo;collected&rdquo; (simulated) some data from the two towns.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+<span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+<span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+<span style="color:#f92672">from</span> empiricaldist <span style="color:#f92672">import</span> Pmf
+<span style="color:#f92672">from</span> scipy.stats <span style="color:#f92672">import</span> t
+<span style="color:#f92672">from</span> scipy.stats <span style="color:#f92672">import</span> norm
+
+np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>seed(<span style="color:#ae81ff">42</span>)
+df <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>
+shelbyville_avg_height <span style="color:#f92672">=</span> <span style="color:#ae81ff">69.1</span>
+shelbyville_sigma_height <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.5</span>
+shelbyville_heights <span style="color:#f92672">=</span> t<span style="color:#f92672">.</span>rvs(df, loc<span style="color:#f92672">=</span>shelbyville_avg_height, scale<span style="color:#f92672">=</span>shelbyville_sigma_height, size<span style="color:#f92672">=</span><span style="color:#ae81ff">150</span>)
+
+springfield_sigma_height <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.5</span>
+springfield_avg_height <span style="color:#f92672">=</span> <span style="color:#ae81ff">70.1</span>
+springfield_heights <span style="color:#f92672">=</span> t<span style="color:#f92672">.</span>rvs(df, loc<span style="color:#f92672">=</span>springfield_avg_height, scale<span style="color:#f92672">=</span>springfield_sigma_height, size<span style="color:#f92672">=</span><span style="color:#ae81ff">150</span>)
+
+</code></pre></div><p><strong>3. Choose a significance level ($\alpha$)</strong>: Typically set to 0.05. This is the probability of making a Type I error, which is the error of rejecting the null hypothesis ($H_0$) when it is true.</p>
+<p><strong>4. Calculate the test statistic</strong>: The experimenter would compute a test statistic (in this case, it would be a t-statistic). The t-statistic is calculated as:</p>
+<p>$$t = \frac{\bar{X}-\mu_0}{\frac{s}{\sqrt{n}}} $$</p>
+<p>Where $\bar{X}$ is the surveyed mean height, $\mu_0$ is the national average height, $s$ is the survey sample standard deviation, and $n$ is the number of people surveyed from the town. This t-statistic is a measure of how many standard errors a sample mean is from the hypothesized population mean. If the t-statistic falls within the critical region, we would reject the null hypothesis that the town&rsquo;s average height is less than or equal to the national average.</p>
+<p>Using <code>scipy</code> in Python, we can easily perform a one-sided t-test to see if the heights in Springfield are larger than Shelbyville:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> scipy.stats <span style="color:#f92672">import</span> ttest_ind
+
+t_stat, p_val <span style="color:#f92672">=</span> ttest_ind(springfield_heights, shelbyville_heights, alternative<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;greater&#39;</span>)
+
+print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;T-statistic: </span><span style="color:#e6db74">{</span>t_stat<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> )
+print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;P-value: </span><span style="color:#e6db74">{</span>p_val<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+
+</code></pre></div><p>The t-statistic is 1.70 and the p-value is 0.0448. Under the frequentist approach and assuming an $\alpha$ of 0.05, we would reject the null hypothesis that the heights in Springfield are less than or equal to the heights in Shelbyville.</p>
+<h2 id="bayesian-approach">Bayesian Approach</h2>
+<p>Bayesian inference is different from the frequentist approach in that the Bayesian approach treats parameters as random variables with probability distributions rather than fixed, unknown parameters. We define the hypothesis just as we do in the statistical approach, but instead of calculating p-values, we determine a suitable prior distribution, calculate the likelihood of the data given the parameters, and then calculate a posterior distribution with which we can determine if the data are significantly different from one another.</p>
+<h3 id="the-prior-distribution">The Prior Distribution</h3>
+<p>The approach I am taking involves using a probability mass function that assigns probabilities to equally spaced discrete values within a certain range (an approach taken from Downey, 2021). For the prior distribution, I will use a <em>uniform distribution</em> that assumes equal probability for all values within the range. There are other options for choosing the prior distribution, including informed priors (e.g., using the distribution that models heights at the national level). Choosing priors involves a level of subjectivity, but opting for a uniform distribution is a simple approach that allows the data to speak for itself. I will assume that the distribution of heights is closely approximated by a normal distribution, and the unknown parameters of interest are $ \mu $ and $ \sigma $. The range I chose is based on information I found online about men&rsquo;s heights.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">qs_mu <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>linspace(<span style="color:#ae81ff">65</span>, <span style="color:#ae81ff">75</span>, <span style="color:#ae81ff">50</span>)
+prior_mu <span style="color:#f92672">=</span> Pmf(<span style="color:#ae81ff">1.0</span>, qs_mu)
+prior_mu<span style="color:#f92672">.</span>normalize()
+
+qs_sigma <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>linspace(<span style="color:#ae81ff">3.0</span>, <span style="color:#ae81ff">5.0</span>, <span style="color:#ae81ff">50</span>)
+prior_sigma <span style="color:#f92672">=</span> Pmf(<span style="color:#ae81ff">1.0</span>, qs_sigma)
+prior_sigma<span style="color:#f92672">.</span>normalize()
+</code></pre></div><p><code>np.linspace(65, 75, 50)</code> generates an array of 50 evenly spaced values between 65 and 75 that represent values of $ \mu $. <code>Pmf(1.0, qs_mu)</code> creates the probability mass function with the 1.0 indicating to use a uniform distribution where all values of $ \mu $ are equally likely. <code>prior_sigma.normalize()</code> normalizes the probability mass function so that the probabilities sum to 1.0. We always need to normalize the distribution for it to be a valid probability distribution.</p>
+<h3 id="calculating-the-likelihood">Calculating the Likelihood</h3>
+<p>Recall that the likelihood is the probability of the data given the hypothesis. I am adopting a grid approach for calculating the likelihood, meaning that I will find every combination of $ \mu $ and $ \sigma $ and determine the probability of the data given each combination. I have created a function called calculate_likelihood that computes the likelihood of the observed data under each combination of parameters (hypothesis). This is done by calculating the probability density function of the normal distribution at each data point and taking the product of the densities</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">calculate_likelihood</span>(prior_mu, prior_sigma, <span style="color:#f92672">*</span>args):
+    <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">    Function that calculates the likelihood for an arbitrary number of datasets for a normal distribution
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    likelihoods <span style="color:#f92672">=</span> {}
+
+    <span style="color:#66d9ef">for</span> data, label <span style="color:#f92672">in</span> args:
+        mu, sigma, data_mesh <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>meshgrid(prior_mu<span style="color:#f92672">.</span>qs, prior_sigma<span style="color:#f92672">.</span>qs, data)
+        densities <span style="color:#f92672">=</span> norm(mu, sigma)<span style="color:#f92672">.</span>pdf(data_mesh)
+        likelihood <span style="color:#f92672">=</span> densities<span style="color:#f92672">.</span>prod(axis<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>) <span style="color:#75715e"># axis 2 is the axis of the data</span>
+        likelihoods[label] <span style="color:#f92672">=</span> likelihood
+
+    <span style="color:#66d9ef">return</span> likelihoods
+
+</code></pre></div><h3 id="calculate-the-posterior-distribution">Calculate the Posterior Distribution</h3>
+<p>Now that we have the likelihoods (which are 2D arrays of probabilities with one dimension for $ \mu$ and another for $\sigma$), we can use these probabilities to update the prior distributions. I created a function that retrieves the parameters for the prior distribution in a grid. Then, we multiply the grid version of the priors with the likelihood 2D array. The posterior needs to be normalized to ensure that the probabilities of the posterior distribution sum to 1.0.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">calculate_posterior</span>(prior_mu, prior_sigma, likelihoods):
+    posteriors <span style="color:#f92672">=</span> {}
+
+    <span style="color:#66d9ef">for</span> label, likelihood <span style="color:#f92672">in</span> likelihoods<span style="color:#f92672">.</span>items():
+        mu_mesh, sigma_mesh <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>meshgrid(prior_mu<span style="color:#f92672">.</span>qs, prior_sigma<span style="color:#f92672">.</span>qs)
+        prior <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(mu_mesh <span style="color:#f92672">*</span> sigma_mesh, columns<span style="color:#f92672">=</span>prior_mu<span style="color:#f92672">.</span>qs, index<span style="color:#f92672">=</span>prior_sigma<span style="color:#f92672">.</span>qs)
+        posterior <span style="color:#f92672">=</span> prior <span style="color:#f92672">*</span> likelihood
+        posterior <span style="color:#f92672">/=</span> posterior<span style="color:#f92672">.</span>sum()<span style="color:#f92672">.</span>sum()
+        posteriors[label] <span style="color:#f92672">=</span> posterior
+
+    <span style="color:#66d9ef">return</span> posteriors
+
+<span style="color:#75715e"># Call the functions</span>
+likelihoods <span style="color:#f92672">=</span> calculate_likelihood(prior_mu, prior_sigma, (shelbyville_heights, <span style="color:#e6db74">&#39;Shelbyville&#39;</span>), (springfield_heights, <span style="color:#e6db74">&#39;Springfield&#39;</span>))
+posteriors <span style="color:#f92672">=</span> calculate_posterior(prior_mu, prior_sigma, likelihoods)
+
+</code></pre></div><p>Next I am going to create probability mass functions of the posteriors so we can plot the posterior distributions of $\mu$.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pmf_shelbyville <span style="color:#f92672">=</span> Pmf(posteriors[<span style="color:#e6db74">&#39;Shelbyville&#39;</span>]<span style="color:#f92672">.</span>sum(axis<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>))
+pmf_springfield <span style="color:#f92672">=</span> Pmf(posteriors[<span style="color:#e6db74">&#39;Springfield&#39;</span>]<span style="color:#f92672">.</span>sum(axis<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>))
+
+plt<span style="color:#f92672">.</span>plot(pmf_shelbyville, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Shelbyville&#39;</span>)
+plt<span style="color:#f92672">.</span>plot(pmf_springfield, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Springfield&#39;</span>)
+plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;Mu value&#39;</span>)
+plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;Probability&#39;</span>)
+plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#39;Posterior Distributions of Town Heights&#39;</span>)
+
+plt<span style="color:#f92672">.</span>legend()
+
+</code></pre></div><p><img src="https://mrodrigues17.github.io/posterior_distributions2.png" alt="Posterior Distribution Plot"></p>
+<p>In this visualization of the posterior distribution of $\mu$, there is some overlap in the distribution between Springfield and Shelbyville, but it seems evident that heights are larger in Springfield.</p>
+<h4 id="_probability-of-superiority_"><em>Probability of Superiority</em></h4>
+<p>The <code>empiricaldist</code> package features a function called <code>prob_gt()</code> that calculates the probability that the parameter ($\mu$) is indeed larger in Springfield. This is known as the <em>probability of superiority</em>, representing the likelihood that a randomly chosen value from one distribution is greater than a randomly chosen value from another (McGraw &amp; Wong, 1992). We can easily calculate this using a probability mass function object:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Pmf<span style="color:#f92672">.</span>prob_gt(pmf_springfield, pmf_shelbyville)
+</code></pre></div><p>This results in a 93.12% probability that Springfield heights are taller. This finding aligns with what we observed in the frequentist approach, but several other metrics can provide additional insights.</p>
+<h4 id="_credible-intervals_"><em>Credible Intervals</em></h4>
+<p>One common metric involves creating a <em>credible interval</em>, which is a range of values that allows us to assert with a certain level of certainty that the true underlying parameter resides within.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">credible_interval_springfield <span style="color:#f92672">=</span> pmf_springfield<span style="color:#f92672">.</span>credible_interval(<span style="color:#ae81ff">0.95</span>)
+credible_interval_shelbyville <span style="color:#f92672">=</span> pmf_shelbyville<span style="color:#f92672">.</span>credible_interval(<span style="color:#ae81ff">0.95</span>)
+print(credible_interval_springfield)
+print(credible_interval_shelbyville)
+[<span style="color:#ae81ff">69.69387755</span> <span style="color:#ae81ff">70.91836735</span>]
+[<span style="color:#ae81ff">68.87755102</span> <span style="color:#ae81ff">70.10204082</span>]
+</code></pre></div><p>The interpretation here is that we are 95% confident that the true $ \mu $ parameter is between 69.69 and 70.91 inches for Springfield, and between 68.88 and 70.1 inches for Shelbyville. Although there is slight overlap in the intervals, this helps quantify a range of the likely $ \mu$ parameter.</p>
+<h4 id="_bayes-factor_"><em>Bayes Factor</em></h4>
+<p>A Bayes Factor is a measure of relative evidence provided by the data for two competing hypotheses and is typically represented as <em>K</em>.</p>
+<p>$$K = \frac{P(D|H_0)}{P(D|H_a)}$$</p>
+<p>This has a simple interpretation:</p>
+<ul>
+<li>If <em>K</em> &gt; 1.0, then the data provides more evidence for $H_0$ (Springfield&rsquo;s average male height is <strong>less than or equal to</strong> Shelbyville).</li>
+<li>If <em>K</em> &lt; 1.0, then the data provides more evidence for $H_a$ (Springfield&rsquo;s average male height is <strong>greater</strong> than Shelbyville).</li>
+</ul>
+<p>A rule of thumb for Bayes factors is that a <em>K</em> between 1 and 3 is considered weak evidence, a Bayes factor between 3 and 10 is considered moderate evidence, and a Bayes factor greater than 10 is considered strong evidence (van Doorn et al., 2019).</p>
+<p>There is some subjectivity in what to use when calculating Bayes Factors, but the approach I will take is:</p>
+<ol>
+<li>Use the posterior distributions of Springfield and Shelbyville heights to determine the parameters that maximizes the posterior distribution (called the <em>maximum a posteriori</em> , or MAP)</li>
+<li>Using these parameters, create a density distribution with one of the datasets (I will use the Springfield heights)</li>
+<li>Calculate the joint probability of all data points in each distribution.</li>
+<li>Divide these joint probabilities to get the Bayes factor.</li>
+</ol>
+<p>Here is a function in Python I wrote to do this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">calculate_bayes_factor</span>(posteriors, data, label1, label2):
+
+    map_sigma_1, map_mu_1 <span style="color:#f92672">=</span> posteriors[label1]<span style="color:#f92672">.</span>stack()<span style="color:#f92672">.</span>idxmax()
+    map_sigma_2, map_mu_2 <span style="color:#f92672">=</span> posteriors[label2]<span style="color:#f92672">.</span>stack()<span style="color:#f92672">.</span>idxmax()
+
+    <span style="color:#75715e"># # calculate likelihood of data for each </span>
+    densities1 <span style="color:#f92672">=</span> norm(map_mu_1, map_sigma_1)<span style="color:#f92672">.</span>pdf(data)
+    densities2 <span style="color:#f92672">=</span> norm(map_mu_2, map_sigma_2)<span style="color:#f92672">.</span>pdf(data)
+
+    bayes_factor <span style="color:#f92672">=</span> densities1<span style="color:#f92672">.</span>prod() <span style="color:#f92672">/</span> densities2<span style="color:#f92672">.</span>prod()
+    
+    <span style="color:#66d9ef">return</span> bayes_factor
+
+k <span style="color:#f92672">=</span> calculate_bayes_factor(posteriors, springfield_heights, <span style="color:#e6db74">&#39;Springfield&#39;</span>, <span style="color:#e6db74">&#39;Shelbyville&#39;</span>)
+k
+</code></pre></div><p>This gives a Bayes Factor of 58.7, which is very strong evidence that the Springfield heights are significantly different from the Shelbyville heights.</p>
+<p>Based on all of this information, you recommend to your company to open the store in Springfield.</p>
+<h2 id="summary">Summary</h2>
+<p>You might be asking, &lsquo;why would I go through the hassle of using Bayesian inference when the frequentist approach worked just as well?&rsquo; There are many arguments to be made in favor of Bayesian methods:</p>
+<p><strong>1. Incorporating Prior Beliefs</strong>: Although I used uninformed priors in the example above, Bayesian Statistics has the luxury of being able to incorporate your beliefs before looking at any data. This is useful if you have expertise on what the data should look like prior to collecting it.</p>
+<p><strong>2. Probabilistic Interpretation</strong>: Frequentist approaches tend to look at point estimates, which don&rsquo;t always provide the whole story. By considering probability distribtions over the possible values of the paramters, we get a better understanding of the uncertainty involved with the parameter estimates.</p>
+<p><strong>3. Robustness to Small Sample Sizes</strong>: Bayesian methods can perform well with small sample sizes. When data is limited, incorporating prior information becomes crucial, and Bayesian inference allows for a smoother transition from prior beliefs to updated estimates.</p>
+<p><strong>4. Sequential Learning</strong>: Also called <em>Diachronic Bayesian Analysis</em>, we can continuously update the distributions as we obtain more data. As new data comes in, our previous posterior distribution can be treated as a prior distribution, and we can update that distribution given the new data.</p>
+<h3 id="other-bayesian-methods">Other Bayesian Methods</h3>
+<p>Keep in mind, the approach I used in this example was a grid method where we try many combinations of the parameters to create a probability mass function that approximates a probability density function. This method is computationally inefficient and does not scale as we increase the size of the dataset. There are other options that include:</p>
+<ol>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo">Markov chain Monte Carlo (MCMC)</a> which are a class of algorithms used to sample from a probability distribution. For example, in the town height example, we could have assumed a normal probability distribution for the prior distribution with parameters equal to the national $ \mu $ and $\sigma$, then as we obtain new data we update the probability distribution parameters. The posterior distribution can then be used as the prior distribution in future iterations of the update if we choose to collect more data.</p>
+</li>
+<li>
+<p>The closed-form solution of using a <a href="https://en.wikipedia.org/wiki/Conjugate_prior">conjugate prior</a>. This approach is computationally efficient and involves choosing a distribution for your prior that is the conjugate to the likelihood, resulting in a posterior distribution that is the same as your prior.</p>
+</li>
+</ol>
+<p>References</p>
+<ol>
+<li>Robberechts, P., Van Haaren, J., &amp; Davis, J. (2021). A bayesian approach to in-game win probability in soccer. Proceedings of the 27th ACM SIGKDD Conference on Knowledge Discovery &amp; Data Mining. <a href="https://doi.org/10.1145/3447548.3467194">https://doi.org/10.1145/3447548.3467194</a></li>
+<li>Talbot, C., &amp; Thrane, E. (2017). Determining the population properties of spinning black holes. Physical Review D, 96(2). <a href="https://doi.org/10.1103/physrevd.96.023012">https://doi.org/10.1103/physrevd.96.023012</a></li>
+<li>Downey, A. B. (2021). Inference. In Think Bayes: Bayesian statistics in Python (pp. 175–188). essay, O’Reilly.</li>
+<li>McGraw, K. O., &amp; Wong, S. P. (1992). A common language effect size statistic. Psychological Bulletin, 111(2), 361–365. <a href="https://doi.org/10.1037//0033-2909.111.2.361">https://doi.org/10.1037//0033-2909.111.2.361</a></li>
+<li>Van Doorn, J., Van den Bergh, D., Bohm, U., Dablander, F., Derks, K., Draws, T., Etz, A., Evans, N. J., Gronau, Q. F., Haaf, J. M., Hinne, M., Kucharský, Š., Ly, A., Marsman, M., Matzke, D., Raj, A., Sarafoglou, A., Stefan, A. M., Voelkel, J. G., &amp; Wagenmakers, E.-J. (2019). The JASP Guidelines for Conducting and Reporting a Bayesian Analysis. <a href="https://doi.org/10.31234/osf.io/yqxfr">https://doi.org/10.31234/osf.io/yqxfr</a></li>
+</ol>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://mrodrigues17.github.io/" >
+    &copy;  Portfolio home page 2024 
+  </a>
+    <div>
+
+
+
+
+
+
+
+<a href="https://www.linkedin.com/in/max-r-134791232/" target="_blank" class="link-transition linkedin link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+<a href="https://github.com/mrodrigues17" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
